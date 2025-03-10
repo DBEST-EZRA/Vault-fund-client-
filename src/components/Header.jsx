@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className="containerB">
       <nav className="navbar">
-        <div className="navbar-logo">Vibrant Water Drilling</div>
+        <div className="navbar-logo">Vault Fund</div>
         <button
           className={`menu-toggle ${isOpen ? "open" : ""}`}
           onClick={toggleMenu}
