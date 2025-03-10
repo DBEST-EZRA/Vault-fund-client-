@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import introImage from "../images/hero.jpg";
+import introImage from "../images/main.png";
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const HeroSection = () => {
     <section
       className="hero-section text-white d-flex align-items-center justify-content-center"
       style={{
-        height: "60vh", // Half screen height
+        height: "100vh", // Half screen height
         backgroundImage: `url(${introImage})`,
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
@@ -40,24 +40,22 @@ const HeroSection = () => {
           zIndex: 2,
         }}
       >
-        <h1
-          className="display-4 fw-bold mb-3"
+        <h2
+          className="display-5 mb-3"
           style={{
             animation: "fadeInDown 2s ease",
-            color: "#00c6ff",
+            color: "white",
+            fontWeight: "normal",
           }}
         >
-          Welcome to Vibrant Water Drilling
-        </h1>
+          Secure, Transparent, and Smarter Group Savings
+        </h2>
         <p
           className="lead mb-4"
           style={{
             animation: "fadeIn 2s ease",
           }}
-        >
-          Transforming lives through sustainable water solutions for over 10
-          years.
-        </p>
+        ></p>
         <button
           className="btn btn-primary btn-lg px-5"
           style={{
@@ -65,7 +63,7 @@ const HeroSection = () => {
           }}
           onClick={() => navigate("/about")}
         >
-          Learn More
+          Create A Kitty
         </button>
       </div>
 
