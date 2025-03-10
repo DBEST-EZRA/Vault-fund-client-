@@ -34,7 +34,39 @@ const Header = () => {
             <a href="contact">Contact</a>
           </li>
           <li>
-            <a href="track-progress">Track Progress</a>
+            <a
+              href="track-progress"
+              style={{ display: "flex", alignItems: "center", gap: "5px" }}
+            >
+              <span
+                style={{
+                  width: "24px",
+                  height: "24px",
+                  background: "#ddd",
+                  borderRadius: "50%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 5V19M5 12H19"
+                    stroke="black"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+              Create A Kitty
+            </a>
           </li>
         </ul>
       </nav>
