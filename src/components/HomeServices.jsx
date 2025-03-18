@@ -3,9 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import wellDrillingImage from "../images/truck.jpg";
-import boreholeMaintenanceImage from "../images/well.jpg";
-import waterConsultancyImage from "../images/water.jpg";
+import wellDrillingImage from "../images/1.png";
+import boreholeMaintenanceImage from "../images/2.png";
+import waterConsultancyImage from "../images/3.png";
 
 const HomeServices = () => {
   useEffect(() => {
@@ -14,21 +14,21 @@ const HomeServices = () => {
 
   const services = [
     {
-      title: "Water Well Drilling",
+      title: "Real-Time Financial Tracking",
       description:
-        "We provide professional water well drilling services, ensuring a reliable and sustainable water source for your needs.",
+        "Get live insights, generate reports, and stay informed with automated financial tracking.",
       image: wellDrillingImage,
     },
     {
-      title: "Borehole Maintenance",
+      title: "Group Savings Management",
       description:
-        "Our borehole maintenance services ensure optimal performance and longevity of your water systems.",
+        "Easily track and manage group contributions with automated reminders and transparent records.",
       image: boreholeMaintenanceImage,
     },
     {
-      title: "Water Consultancy",
+      title: "Fraud Detection & Security",
       description:
-        "Get expert advice on water management and solutions tailored to your unique requirements.",
+        "AI-powered anomaly detection ensures secure transactions and protects against fraud.",
       image: waterConsultancyImage,
     },
   ];
@@ -45,19 +45,10 @@ const HomeServices = () => {
           animation: "gradientAnimation 8s ease infinite",
         }}
       >
-        <h2
-          className="text-center mb-4"
-          style={{ color: "#01327b", fontWeight: "bold" }}
-        >
+        <h2 className="text-center mb-4" style={{ color: "#058fc3" }}>
           Our Services
         </h2>
-        <p className="text-center mb-5">
-          At Vibrant Water Drilling Company, we are dedicated to providing
-          high-quality water solutions tailored to meet your needs. Whether it's
-          drilling water wells, maintaining boreholes, or offering expert
-          consultancy, we are committed to delivering excellence in every
-          project we undertake.
-        </p>
+        <p className="text-center mb-5"></p>
         <div className="row g-4">
           {services.map((service, index) => (
             <div className="col-md-4" key={index}>
@@ -83,7 +74,7 @@ const HomeServices = () => {
                 <div className="card-body text-center">
                   <h5
                     className="card-title fw-bold"
-                    style={{ color: "#01327b" }}
+                    style={{ color: "#058fc3" }}
                   >
                     {service.title}
                   </h5>

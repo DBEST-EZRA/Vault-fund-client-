@@ -70,10 +70,7 @@ const AskedQuestions = () => {
 
   return (
     <div className="container py-5" data-aos="fade-up">
-      <h2
-        className="text-center mb-4"
-        style={{ color: "#01327b", fontWeight: "bold" }}
-      >
+      <h2 className="text-center mb-4" style={{ color: "#058fc3" }}>
         FAQ's
       </h2>
       <p className="text-center mb-5">

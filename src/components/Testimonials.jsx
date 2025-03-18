@@ -11,55 +11,36 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "John Doe",
-      text: "Vibrant Water Drilling Company exceeded my expectations. Their team was professional and efficient.",
+      name: "Emily Carter",
+      text: "VaultFund has completely transformed our savings group. Managing contributions and tracking expenses has never been easier!",
     },
     {
-      name: "Jane Smith",
-      text: "I am extremely satisfied with their borehole maintenance services. Highly recommend them!",
+      name: "Daniel Ochieng",
+      text: "The fraud detection system gives us peace of mind. Our group funds are secure and well-managed.",
     },
     {
-      name: "Samuel Kimani",
-      text: "Reliable and trustworthy. Vibrant is the best in Nairobi for water solutions.",
+      name: "Sophia Martinez",
+      text: "I love how transparent VaultFund is. Every member can see transactions in real-time, ensuring trust and accountability.",
     },
     {
-      name: "Alice Johnson",
-      text: "Excellent service! They completed the job on time and with great precision.",
+      name: "James Mwaura",
+      text: "VaultFund's automated reminders have helped us stay on track with our savings goals. Highly recommended!",
     },
     {
-      name: "Peter Otieno",
-      text: "Their consultancy services helped us plan our water drilling project perfectly.",
+      name: "Linda Johnson",
+      text: "The investment tracking feature is a game-changer. We can now monitor our group investments with ease.",
     },
     {
-      name: "Grace Njoroge",
-      text: "Their customer service is unmatched. Truly a company that values its clients.",
-    },
-    {
-      name: "Michael Mwangi",
-      text: "Thanks to Vibrant, we now have a sustainable water source for our farm.",
-    },
-    {
-      name: "Nancy Wafula",
-      text: "Very professional team. They handled our project with utmost care and dedication.",
-    },
-    {
-      name: "David Chege",
-      text: "Affordable and reliable. I wouldn't hesitate to recommend Vibrant to anyone.",
-    },
-    {
-      name: "Lydia Kiplagat",
-      text: "The best decision I made was choosing Vibrant Water Drilling Company. Fantastic experience!",
+      name: "Michael Adeyemi",
+      text: "Seamless payments and easy fund transfers make VaultFund the perfect platform for community savings.",
     },
   ];
 
   return (
     <section className="py-5 bg-light" data-aos="fade-up">
       <div className="container">
-        <h2
-          className="text-center mb-4"
-          style={{ color: "#01327b", fontWeight: "bold" }}
-        >
-          What Our Clients Say
+        <h2 className="text-center mb-4" style={{ color: "#058fc3" }}>
+          What Our Users Say
         </h2>
         <div
           id="testimonialCarousel"

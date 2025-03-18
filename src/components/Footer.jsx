@@ -38,7 +38,7 @@ const Footer = () => {
           <div className="send flex">
             <div className={`text ${isVisible ? "fade-in" : ""}`}>
               <span>Do You Have Questions?</span>
-              <p>We'll help you to grow your career and growth.</p>
+              <p>We'll help you get answers.</p>
             </div>
             <a
               href={`https://wa.me/254794930049?text=${encodeURIComponent(
@@ -50,7 +50,7 @@ const Footer = () => {
               style={{
                 textDecoration: "none",
                 color: "#fff",
-                backgroundColor: "#01327b",
+                backgroundColor: "#058fc3",
                 padding: "10px 20px",
                 borderRadius: "8px",
                 fontWeight: "bold",
