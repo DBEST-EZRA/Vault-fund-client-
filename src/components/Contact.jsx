@@ -22,10 +22,8 @@ const Contact = () => {
         }}
       >
         <div>
-          <h1 className="display-4 fw-bold">Vibrant Water Drilling Company</h1>
-          <p className="lead mt-3">
-            Delivering reliable water solutions with precision and efficiency.
-          </p>
+          <h1 className="display-4 fw-bold">Empowering Communities</h1>
+          <p className="lead mt-3">One Contribution at a Time</p>
         </div>
       </section>
 
@@ -40,10 +38,10 @@ const Contact = () => {
               <strong>Address:</strong> Karen, Nairobi, Kenya
             </p>
             <p>
-              <strong>Phone:</strong> +254 794 930 049
+              <strong>Phone:</strong> +254 712 405 172
             </p>
             <p>
-              <strong>Email:</strong> info@vibrantwaterdrilling.co.ke
+              <strong>Email:</strong> info@vaultfund.co.ke
             </p>
             <p>
               <strong>Hours:</strong> Mon - Sat: 8:00 AM - 5:00 PM

@@ -1,6 +1,6 @@
 /* StatsSection.css */
 .stats-section {
-  background-color: #01327b;
+  background-color: #058fc3;
   color: white;
   padding: 3rem 1rem;
   text-align: center;
@@ -10,7 +10,7 @@
   font-weight: bold;
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #00c6ff;
+  color: #ffd422;
 }
 
 .stats-container {

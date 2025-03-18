@@ -4,10 +4,10 @@ import "./stats.css";
 const Stats = () => {
   const stats = useMemo(
     () => [
-      { id: 1, label: "Boreholes Drilled", value: 417 },
-      { id: 2, label: "Successful Projects", value: 863 },
-      { id: 3, label: "Happy Clients", value: 852 },
-      { id: 4, label: "Years of Experience", value: 10 },
+      { id: 1, label: "Transactions", value: 1350 },
+      { id: 2, label: "Kitties Created", value: 863 },
+      { id: 3, label: "Happy Clients", value: 11152 },
+      { id: 4, label: "Groups", value: 320 },
     ],
     []
   );
@@ -69,7 +69,7 @@ const Stats = () => {
         {stats.map((stat, index) => (
           <div key={stat.id} className="stat-item">
             <span className="stat-value">{counters[index]}</span>
-            <p className="stat-label" style={{ color: "#00c6ff" }}>
+            <p className="stat-label" style={{ color: "#fff" }}>
               {stat.label}
             </p>
           </div>

@@ -11,67 +11,56 @@ const AskedQuestions = () => {
 
   const [activeIndex, setActiveIndex] = useState(null);
 
-  // FAQs data
   const faqs = [
     {
-      question: "What services do you offer?",
+      question: "What is VaultFund?",
       answer:
-        "We offer water well drilling, borehole maintenance, and water consultancy services.",
+        "VaultFund is a fintech platform designed to help community savings groups, clubs, and informal investment circles manage their finances securely and transparently.",
     },
     {
-      question: "How long does it take to drill a water well?",
+      question: "How does VaultFund prevent fraud?",
       answer:
-        "Typically, it takes 1-3 days depending on the depth and geological conditions.",
+        "VaultFund uses advanced fraud detection techniques, including anomaly detection powered by semi-supervised and unsupervised learning, to identify irregular transactions and protect group funds.",
     },
     {
-      question: "Do you provide borehole cleaning services?",
+      question: "Who can use VaultFund?",
       answer:
-        "Yes, we provide comprehensive borehole cleaning and maintenance services.",
+        "VaultFund is designed for savings groups, investment clubs, and informal financial circles looking for a secure way to manage collective funds.",
     },
     {
-      question: "What areas do you serve?",
+      question: "How can I track my contributions and expenses?",
       answer:
-        "We serve clients across the entire region, including urban and rural areas.",
+        "VaultFund provides real-time tracking, allowing members to monitor their contributions, expenses, and overall group fund balance instantly.",
     },
     {
-      question: "How do I know if I need a new water well?",
+      question: "Is my money safe with VaultFund?",
       answer:
-        "If you are experiencing low water pressure or contamination, it might be time for a new well.",
+        "Yes, VaultFund prioritizes security through fraud detection, encryption, and transparent financial records to ensure funds are managed safely.",
     },
     {
-      question: "Do you assist with water testing?",
+      question: "What payment methods are supported?",
       answer:
-        "Yes, we provide water testing to ensure it meets quality and safety standards.",
+        "VaultFund supports multiple payment options, including bank transfers, mobile money, and digital wallets.",
     },
     {
-      question: "What is the cost of your services?",
+      question: "Can I create multiple savings groups?",
       answer:
-        "Our costs vary depending on the type of service. Contact us for a detailed quote.",
+        "Yes, users can create and manage multiple savings groups within the platform, each with its own members and financial tracking.",
     },
     {
-      question: "Can I get a consultation before starting a project?",
+      question: "How does VaultFund support financial inclusion?",
       answer:
-        "Yes, we offer consultations to discuss your specific water needs.",
+        "VaultFund helps users underserved by traditional banks by providing a digital-first solution for group savings and investments, making financial management accessible to all.",
     },
     {
-      question: "Do you handle permits for drilling?",
+      question: "Is VaultFund available on mobile?",
       answer:
-        "Yes, we assist with the permitting process required for water well drilling.",
+        "Yes, VaultFund is a web-based platform optimized for both desktop and mobile use, ensuring accessibility anytime, anywhere.",
     },
     {
-      question: "How do I maintain my borehole?",
+      question: "How do I get started with VaultFund?",
       answer:
-        "We recommend regular inspections and maintenance to ensure optimal performance.",
-    },
-    {
-      question: "What equipment do you use for drilling?",
-      answer:
-        "We use advanced and modern drilling equipment to ensure precision and efficiency.",
-    },
-    {
-      question: "How do I schedule a service with you?",
-      answer:
-        "You can contact us through our website or by phone to schedule a service.",
+        "Simply sign up on our platform, create or join a savings group, and start managing your funds with transparency and security.",
     },
   ];
 

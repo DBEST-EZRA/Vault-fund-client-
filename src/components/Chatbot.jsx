@@ -12,7 +12,7 @@ const Chatbot = () => {
       // Add user's message to the chat
       const userMessage = { text: inputText, sender: "user" };
       const botMessage = {
-        text: "Hello, our chatbot is under maintenance to give you the best service, kindly reach us through +254794930049",
+        text: "Hello, our chatbot is under maintenance to give you the best service, kindly reach us through +254712405172",
         sender: "bot",
       };
 
@@ -69,8 +69,7 @@ const Chatbot = () => {
             style={{ flex: "1", display: "flex", flexDirection: "column" }}
           >
             <p className="text-muted">
-              Welcome to Vibrant Borehole Drilling Company! How can we assist
-              you?
+              Welcome to Vaultfund! How can we assist you today?
             </p>
             {messages.map((message, index) => (
               <div
