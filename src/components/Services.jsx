@@ -4,10 +4,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 // Import your local images
-import introImage from "../images/cover.jpg";
-import wellDrillingImage from "../images/truck.jpg";
-import boreholeMaintenanceImage from "../images/well.jpg";
-import waterConsultancyImage from "../images/water.jpg";
+import introImage from "../images/main2.png";
+import wellDrillingImage from "../images/1.png";
+import boreholeMaintenanceImage from "../images/2.png";
+import waterConsultancyImage from "../images/3.png";
 
 const Services = () => {
   useEffect(() => {
@@ -48,9 +48,9 @@ const Services = () => {
         }}
       >
         <div>
-          <h1 className="display-4 fw-bold">Vibrant Water Drilling Company</h1>
+          <h1 className="display-4 fw-bold">Easily save & manage funds</h1>
           <p className="lead mt-3">
-            Delivering reliable water solutions with precision and efficiency.
+            Take Control of Your Group’s Financial Future
           </p>
         </div>
       </section>

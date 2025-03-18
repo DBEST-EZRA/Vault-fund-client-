@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import introImage from "../images/cover.jpg";
+import introImage from "../images/main2.png";
 
 const About = () => {
   useEffect(() => {
