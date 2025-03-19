@@ -21,6 +21,8 @@ import HomeServices from "./HomeServices";
 import AskedQuestions from "./AskedQuestions";
 import Chatbot from "./Chatbot";
 import Dashboard from "./Dashboard";
+import Kitty from "./Kitty";
+import Contribute from "./Contribute";
 
 const Home = () => {
   useEffect(() => {
@@ -44,6 +46,8 @@ const Home = () => {
               <Testimonials />
               <AskedQuestions />
               <Chatbot />
+              {/* <Kitty />
+              <Contribute /> */}
             </>
           }
         />
@@ -52,6 +56,8 @@ const Home = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/track-progress" element={<TrackProgress />} />
         <Route path="/v-admin" element={<Dashboard />} />
+        <Route path="/kitty" element={<Kitty />} />
+        <Route path="/contribute" element={<Contribute />} />
       </Routes>
       {!hideHeaderFooter && <Footer />}
     </div>
