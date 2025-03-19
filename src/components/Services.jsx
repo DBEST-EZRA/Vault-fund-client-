@@ -57,7 +57,7 @@ const Services = () => {
 
       {/* Services Section */}
       <section className="container py-5" data-aos="fade-up">
-        <h2 className="text-center mb-4" style={{ color: "#01327b" }}>
+        <h2 className="text-center mb-4" style={{ color: "#058fc3" }}>
           Our Services
         </h2>
         <p className="text-center mb-5"></p>

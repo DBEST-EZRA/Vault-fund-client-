@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import introImage from "../images/main2.png";
+import introImage from "../images/main3.png";
 
 const About = () => {
   useEffect(() => {
@@ -23,48 +23,43 @@ const About = () => {
         }}
       >
         <div>
-          <h1 className="display-4 fw-bold">Vibrant Water Drilling Company</h1>
-          <p className="lead mt-3">
-            Over a decade of excellence in water drilling and consultancy
-            services.
+          <h1 className="display-4 fw-bold" style={{ color: "#fff" }}>
+            About Us
+          </h1>
+          <p className="lead mt-3" style={{ color: "#fff" }}>
+            Access and manage your funds anytime, anywhere
           </p>
         </div>
       </section>
 
       {/* About Us Section */}
       <section className="container py-5" data-aos="fade-up">
-        <h2
-          className="text-center mb-4"
-          style={{ color: "#01327b", fontWeight: "bold" }}
-        >
-          About Us
-        </h2>
         <div className="row">
           <div className="col-12 position-relative">
             {[
               {
                 title: "Our Vision",
-                text: `At <strong>Vibrant Water Drilling Company</strong>, our vision is to empower communities and businesses across Kenya with sustainable water solutions. We aim to be a driving force in ensuring every household, farm, and industry has access to clean and reliable water resources.`,
+                text: `At <strong>VaultFund</strong>, our vision is to revolutionize group savings and investment management. We aim to empower communities and organizations with seamless, secure, and transparent financial solutions that drive economic growth and financial inclusion.`,
                 color: "#FF6F61",
               },
               {
                 title: "Who We Are",
-                text: `Based in Nairobi, Kenya, <strong>Vibrant Water Drilling Company</strong> is a leader in water drilling, borehole maintenance, and consultancy services. With 10 years of experience, we have earned a reputation for delivering reliable and innovative solutions tailored to meet the diverse needs of our clients.`,
+                text: `VaultFund is a fintech platform designed to simplify and secure group savings, investments, and fund management. With cutting-edge technology and a user-first approach, we ensure that every financial transaction is efficient, transparent, and secure.`,
                 color: "#FFD700",
               },
               {
                 title: "Our Expertise",
-                text: `We combine advanced drilling technologies, a dedicated team of professionals, and eco-friendly practices to deliver precision and efficiency in every project. From drilling water wells to providing expert consultations, we are committed to excellence at every step.`,
+                text: `We specialize in AI-powered fraud detection, automated financial tracking, and seamless payment integrations. Our platform is built to help communities and businesses manage their funds with confidence and efficiency.`,
                 color: "#00C6FF",
               },
               {
                 title: "Our Commitment",
-                text: `At Vibrant, we are dedicated to building lasting relationships with our clients by consistently exceeding expectations. Our team is passionate about contributing to the long-term water security of Kenya through projects that are both sustainable and impactful.`,
+                text: `At VaultFund, we are committed to financial empowerment, security, and transparency. Our goal is to provide reliable tools that help users build trust, grow their savings, and make smarter investment decisions.`,
                 color: "#6A5ACD",
               },
               {
                 title: "Why Choose Us",
-                text: `Choosing Vibrant Water Drilling Company means partnering with a team that values trust, innovation, and quality. We deliver timely, cost-effective, and customized solutions to ensure your water needs are met with precision and care.`,
+                text: `Choosing VaultFund means partnering with a platform that values trust, security, and innovation. We provide a streamlined experience for managing group funds, ensuring financial success for all members.`,
                 color: "#32CD32",
               },
             ].map((section, index) => (
@@ -96,62 +91,13 @@ const About = () => {
 
                 {/* Content */}
                 <div>
-                  <h3 className="fw-bold mb-3">{section.title}</h3>
+                  <h3 className="mb-3" style={{ color: "#058fc3" }}>
+                    {section.title}
+                  </h3>
                   <p
                     className="text-muted fs-5"
                     dangerouslySetInnerHTML={{ __html: section.text }}
                   ></p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="bg-light py-5" data-aos="fade-up">
-        <div className="container">
-          <h2 className="text-center mb-4">Meet Our Team</h2>
-          <div className="row g-4">
-            {[
-              {
-                name: "John Doe",
-                role: "CEO",
-                img: "https://picsum.photos/300/300?random=1",
-              },
-              {
-                name: "Jane Smith",
-                role: "Operations Manager",
-                img: "https://picsum.photos/300/300?random=2",
-              },
-              {
-                name: "Michael Brown",
-                role: "Lead Technician",
-                img: "https://picsum.photos/300/300?random=3",
-              },
-            ].map((member, index) => (
-              <div className="col-md-4" key={index}>
-                <div className="card text-center shadow-sm border-0">
-                  <img
-                    src={member.img}
-                    alt={member.name}
-                    className="card-img-top"
-                    style={{
-                      height: "300px",
-                      objectFit: "cover",
-                      transition: "transform 0.3s ease",
-                    }}
-                    onMouseOver={(e) =>
-                      (e.currentTarget.style.transform = "scale(1.1)")
-                    }
-                    onMouseOut={(e) =>
-                      (e.currentTarget.style.transform = "scale(1)")
-                    }
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title fw-bold">{member.name}</h5>
-                    <p className="card-text">{member.role}</p>
-                  </div>
                 </div>
               </div>
             ))}
