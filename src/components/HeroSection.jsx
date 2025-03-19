@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import introImage from "../images/main.png";
+import introImage from "../images/main4.png";
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -14,9 +14,9 @@ const HeroSection = () => {
 
   return (
     <section
-      className="hero-section text-white d-flex align-items-center justify-content-center"
+      className="hero-section text-white d-flex align-items-center"
       style={{
-        height: "100vh", // Half screen height
+        height: "100vh",
         backgroundImage: `url(${introImage})`,
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
@@ -24,46 +24,54 @@ const HeroSection = () => {
         position: "relative",
       }}
     >
-      {/* Overlay */}
+      {/* Baby Blue Overlay */}
       <div
         className="position-absolute top-0 start-0 w-100 h-100"
         style={{
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          backgroundColor: "rgba(52, 78, 87, 0.5)", // Baby blue overlay
           zIndex: 1,
         }}
       ></div>
 
       {/* Content */}
       <div
-        className="text-center"
-        style={{
-          zIndex: 2,
-        }}
+        className="container text-left"
+        style={{ zIndex: 2, maxWidth: "600px" }}
       >
         <h2
           className="display-5 mb-3"
           style={{
             animation: "fadeInDown 2s ease",
-            color: "white",
             fontWeight: "normal",
+            color: "#fff",
           }}
         >
           Secure, Transparent, and Smarter Group Savings
         </h2>
         <p
           className="lead mb-4"
-          style={{
-            animation: "fadeIn 2s ease",
-          }}
-        ></p>
+          style={{ animation: "fadeIn 2s ease", color: "white" }}
+        >
+          Join VaultFund and take control of your financial future.
+        </p>
         <button
-          className="btn btn-primary btn-lg px-5"
-          style={{
-            animation: "zoomIn 2s ease",
-          }}
-          onClick={() => navigate("/about")}
+          className="btn btn-primary btn-lg px-5 me-3"
+          style={{ animation: "zoomIn 2s ease" }}
+          onClick={() => navigate("/kitty")}
         >
           Create A Kitty
+        </button>
+        <button
+          className="btn btn-lg px-5"
+          style={{
+            animation: "zoomIn 2s ease",
+            outline: "2px solid #fff",
+            borderColor: "#fff",
+            color: "white",
+          }}
+          onClick={() => navigate("/contribute")}
+        >
+          Contribute
         </button>
       </div>
 
