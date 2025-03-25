@@ -2,12 +2,21 @@
   "name": "vaultclient",
   "version": "0.1.0",
   "private": true,
+  "browser": {
+    "https": "https-browserify",
+    "stream": "stream-browserify",
+    "util": "util",
+    "zlib": "browserify-zlib"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
     "aos": "^2.3.4",
+    "axios": "^1.8.4",
     "bootstrap": "^5.3.3",
+    "browserify-zlib": "^0.2.0",
     "cra-template": "1.2.0",
     "firebase": "^11.3.1",
+    "https-browserify": "^1.0.0",
     "lucide-react": "^0.475.0",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
@@ -15,6 +24,8 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.2.0",
     "react-scripts": "5.0.1",
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.5",
     "web-vitals": "^4.2.4"
   },
   "scripts": {

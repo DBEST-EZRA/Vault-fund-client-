@@ -2,7 +2,16 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
+
+const generateKittyAddress = () => {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let address = "";
+  for (let i = 0; i < 6; i++) {
+    address += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return address;
+};
 
 const Kitty = () => {
   const navigate = useNavigate();
@@ -12,20 +21,28 @@ const Kitty = () => {
   const [kittyType, setKittyType] = useState("Rotating Savings");
   const [beneficiaryNumber, setBeneficiaryNumber] = useState("");
   const [maturityDate, setMaturityDate] = useState("");
-  const [contributionLink, setContributionLink] = useState(null);
+  const [kittyAddress, setKittyAddress] = useState(generateKittyAddress());
   const [showModal, setShowModal] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const uniqueId = uuidv4();
-    const link = `http://localhost:3000/contribute/${uniqueId}`;
-    setContributionLink(link);
-    setShowModal(true);
-  };
+    const formData = {
+      kittyEmail,
+      kittyName,
+      kittyDescription,
+      kittyType,
+      beneficiaryNumber,
+      maturityDate,
+      kittyAddress,
+    };
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(contributionLink);
-    alert("Link copied to clipboard!");
+    try {
+      await axios.post("http://localhost:5000/createkitty", formData);
+      setShowModal(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to create Kitty. Please try again.");
+    }
   };
 
   return (
@@ -39,7 +56,7 @@ const Kitty = () => {
           <div className="mb-3">
             <label className="form-label">Kitty Email</label>
             <input
-              type="text"
+              type="email"
               className="form-control"
               value={kittyEmail}
               onChange={(e) => setKittyEmail(e.target.value)}
@@ -101,6 +118,15 @@ const Kitty = () => {
               required
             />
           </div>
+          <div className="mb-3">
+            <label className="form-label">Generated Kitty Address</label>
+            <input
+              type="text"
+              className="form-control"
+              value={kittyAddress}
+              readOnly
+            />
+          </div>
           <button type="submit" className="btn btn-primary w-100">
             Create Kitty
           </button>
@@ -114,22 +140,9 @@ const Kitty = () => {
         </Modal.Header>
         <Modal.Body className="text-center">
           <h5>{kittyName}</h5>
-          <p>Share this link with people to contribute:</p>
-          <div className="alert alert-success">
-            <p className="mb-0">
-              <a
-                href={contributionLink}
-                className="text-decoration-none"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {contributionLink}
-              </a>
-            </p>
-          </div>
-          <button className="btn btn-secondary" onClick={handleCopy}>
-            Copy Link
-          </button>
+          <p>
+            Your unique kitty address: <strong>{kittyAddress}</strong>
+          </p>
         </Modal.Body>
       </Modal>
     </div>
