@@ -58,6 +58,7 @@ const Home = () => {
         <Route path="/v-admin" element={<Dashboard />} />
         <Route path="/kitty" element={<Kitty />} />
         <Route path="/contribute" element={<Contribute />} />
+        <Route path="/contribute/:kittyAddress" element={<Contribute />} />
       </Routes>
       {!hideHeaderFooter && <Footer />}
     </div>
