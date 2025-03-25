@@ -41,7 +41,7 @@ const Kitty = () => {
             <input
               type="text"
               className="form-control"
-              value={kittyName}
+              value={kittyEmail}
               onChange={(e) => setKittyEmail(e.target.value)}
               required
             />

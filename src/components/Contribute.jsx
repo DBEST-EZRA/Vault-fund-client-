@@ -37,7 +37,7 @@ const Contribute = () => {
       <h2 className="text-center mb-4" style={{ color: "#058fc3" }}>
         Contribute to Kitty
       </h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Kitty Address</label>
           <input
