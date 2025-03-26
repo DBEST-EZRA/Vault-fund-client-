@@ -13,18 +13,18 @@ const Stats = () => {
   );
 
   const [counters, setCounters] = useState(stats.map(() => 0));
-  const [hasTriggered, setHasTriggered] = useState(false); // Tracks if the counter has run
+  const [hasTriggered, setHasTriggered] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const currentRef = sectionRef.current; // Copy ref to local variable
+    const currentRef = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasTriggered) {
-          setHasTriggered(true); // Prevent retriggering
+          setHasTriggered(true);
         }
       },
-      { threshold: 0.3 } // Trigger when 30% of the section is visible
+      { threshold: 0.3 }
     );
 
     if (currentRef) {
@@ -43,7 +43,7 @@ const Stats = () => {
       stats.forEach((stat, index) => {
         let start = 0;
         const end = stat.value;
-        const duration = 2000; // 1 second
+        const duration = 2000;
         const stepTime = Math.abs(Math.floor(duration / end));
 
         const timer = setInterval(() => {

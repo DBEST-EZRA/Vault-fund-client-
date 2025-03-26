@@ -12,7 +12,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: "Emily Carter",
-      text: "VaultFund has completely transformed our savings group. Managing contributions and tracking expenses has never been easier!",
+      text: "Smart Purse has completely transformed our savings group. Managing contributions and tracking expenses has never been easier!",
     },
     {
       name: "Daniel Ochieng",
@@ -20,11 +20,11 @@ const Testimonials = () => {
     },
     {
       name: "Sophia Martinez",
-      text: "I love how transparent VaultFund is. Every member can see transactions in real-time, ensuring trust and accountability.",
+      text: "I love how transparent Smart Purse is. Every member can see transactions in real-time, ensuring trust and accountability.",
     },
     {
       name: "James Mwaura",
-      text: "VaultFund's automated reminders have helped us stay on track with our savings goals. Highly recommended!",
+      text: "Samrt Purse's automated reminders have helped us stay on track with our savings goals. Highly recommended!",
     },
     {
       name: "Linda Johnson",
@@ -32,7 +32,7 @@ const Testimonials = () => {
     },
     {
       name: "Michael Adeyemi",
-      text: "Seamless payments and easy fund transfers make VaultFund the perfect platform for community savings.",
+      text: "Seamless payments and easy fund transfers make Smart Purse the perfect platform for community savings.",
     },
   ];
 

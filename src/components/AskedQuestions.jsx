@@ -13,34 +13,34 @@ const AskedQuestions = () => {
 
   const faqs = [
     {
-      question: "What is VaultFund?",
+      question: "What is Smart Purse?",
       answer:
-        "VaultFund is a fintech platform designed to help community savings groups, clubs, and informal investment circles manage their finances securely and transparently.",
+        "Smart Purse is a fintech platform designed to help community savings groups, clubs, and informal investment circles manage their finances securely and transparently.",
     },
     {
-      question: "How does VaultFund prevent fraud?",
+      question: "How does Smart Purse prevent fraud?",
       answer:
-        "VaultFund uses advanced fraud detection techniques, including anomaly detection powered by semi-supervised and unsupervised learning, to identify irregular transactions and protect group funds.",
+        "Smart Purse uses advanced fraud detection techniques, including anomaly detection powered by semi-supervised and unsupervised learning, to identify irregular transactions and protect group funds.",
     },
     {
-      question: "Who can use VaultFund?",
+      question: "Who can use Smart Purse?",
       answer:
-        "VaultFund is designed for savings groups, investment clubs, and informal financial circles looking for a secure way to manage collective funds.",
+        "Smart Purse is designed for savings groups, investment clubs, and informal financial circles looking for a secure way to manage collective funds.",
     },
     {
       question: "How can I track my contributions and expenses?",
       answer:
-        "VaultFund provides real-time tracking, allowing members to monitor their contributions, expenses, and overall group fund balance instantly.",
+        "Smart Purse provides real-time tracking, allowing members to monitor their contributions, expenses, and overall group fund balance instantly.",
     },
     {
-      question: "Is my money safe with VaultFund?",
+      question: "Is my money safe with Smart Purse?",
       answer:
-        "Yes, VaultFund prioritizes security through fraud detection, encryption, and transparent financial records to ensure funds are managed safely.",
+        "Yes, Smart Purse prioritizes security through fraud detection, encryption, and transparent financial records to ensure funds are managed safely.",
     },
     {
       question: "What payment methods are supported?",
       answer:
-        "VaultFund supports multiple payment options, including bank transfers, mobile money, and digital wallets.",
+        "Smart Purse supports multiple payment options, including bank transfers, mobile money, and digital wallets.",
     },
     {
       question: "Can I create multiple savings groups?",
@@ -48,17 +48,17 @@ const AskedQuestions = () => {
         "Yes, users can create and manage multiple savings groups within the platform, each with its own members and financial tracking.",
     },
     {
-      question: "How does VaultFund support financial inclusion?",
+      question: "How does Smart Purse support financial inclusion?",
       answer:
-        "VaultFund helps users underserved by traditional banks by providing a digital-first solution for group savings and investments, making financial management accessible to all.",
+        "Smart Purse helps users underserved by traditional banks by providing a digital-first solution for group savings and investments, making financial management accessible to all.",
     },
     {
-      question: "Is VaultFund available on mobile?",
+      question: "Is Smart Purse available on mobile?",
       answer:
-        "Yes, VaultFund is a web-based platform optimized for both desktop and mobile use, ensuring accessibility anytime, anywhere.",
+        "Yes, Smart Purse is a web-based platform optimized for both desktop and mobile use, ensuring accessibility anytime, anywhere.",
     },
     {
-      question: "How do I get started with VaultFund?",
+      question: "How do I get started with Smart Purse?",
       answer:
         "Simply sign up on our platform, create or join a savings group, and start managing your funds with transparency and security.",
     },
