@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
+import MyContributions from "./MyContributions";
 
 const Contribute = () => {
   const { kittyAddress: urlKittyAddress } = useParams();
@@ -11,6 +13,7 @@ const Contribute = () => {
   const [payingNumber, setPayingNumber] = useState("");
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showMpesaModal, setShowMpesaModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (urlKittyAddress) {
@@ -18,25 +21,55 @@ const Contribute = () => {
     }
   }, [urlKittyAddress]);
 
-  const handleSubmit = () => {
-    setShowSuccessModal(true);
+  const checkKittyAddress = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:5000/checkkitty/${kittyAddress}`
+      );
+      return response.data.exists;
+    } catch (error) {
+      console.error("Error checking kitty address:", error);
+      return false;
+    }
   };
 
-  const handleMpesaPayment = () => {
-    setShowMpesaModal(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const isKittyValid = await checkKittyAddress();
+    if (!isKittyValid) {
+      alert("Invalid kitty address");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const contributionData = {
+      kittyAddress,
+      name,
+      email,
+      amount,
+      transactionRef,
+    };
+
+    try {
+      await axios.post("http://localhost:5000/contribute", contributionData);
+      setShowSuccessModal(true);
+    } catch (error) {
+      console.error("Error submitting contribution:", error);
+      alert("Failed to submit contribution");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="container py-5" style={{ maxWidth: "500px" }}>
-      <div
-        className="alert alert-info text-center"
-        style={{ fontWeight: "bold" }}
-      >
+      <MyContributions />
+      <div className="alert alert-info text-center fw-bold">
         M-Pesa Till No: 8853944
       </div>
-      <h2 className="text-center mb-4" style={{ color: "#058fc3" }}>
-        Contribute to Kitty
-      </h2>
+      <h2 className="text-center mb-4 text-primary">Contribute to Kitty</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Kitty Address</label>
@@ -89,21 +122,22 @@ const Contribute = () => {
           />
         </div>
         <button
-          type="button"
+          type="submit"
           className="btn btn-success w-100 mb-2"
-          onClick={handleSubmit}
+          disabled={isSubmitting}
         >
-          Submit Contribution
+          {isSubmitting ? "Processing..." : "Submit Contribution"}
         </button>
         <button
           type="button"
           className="btn btn-primary w-100"
           style={{ backgroundColor: "#058fc3", borderColor: "#058fc3" }}
-          onClick={handleMpesaPayment}
+          onClick={() => setShowMpesaModal(true)}
         >
           Pay with M-Pesa Prompt
         </button>
       </form>
+
       {/* Success Modal */}
       {showSuccessModal && (
         <div
@@ -126,6 +160,7 @@ const Contribute = () => {
           </div>
         </div>
       )}
+
       {/* M-Pesa Payment Modal */}
       {showMpesaModal && (
         <div
