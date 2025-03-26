@@ -1,69 +1,111 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Modal, Button, Form } from "react-bootstrap";
 
 const MyKitties = () => {
-  const kitties = [
-    {
-      address: "5efccac2-1b88-43cb-8b58-0ffec77c142d",
-      name: "Education Fund",
-      amountRaised: "KES 50,000",
-      maturityDate: "2025-12-31",
-    },
-    {
-      address: "3abccba1-2c34-4dab-91ef-8fe982be2143",
-      name: "Medical Fund",
-      amountRaised: "KES 30,000",
-      maturityDate: "2025-10-15",
-    },
-    {
-      address: "7ghijk12-34lm-56no-78pq-90rstuvwxyza",
-      name: "Business Startup",
-      amountRaised: "KES 75,000",
-      maturityDate: "2026-03-20",
-    },
-    {
-      address: "9bcdef34-56gh-78ij-90kl-mnopqrstuvwx",
-      name: "Emergency Fund",
-      amountRaised: "KES 20,000",
-      maturityDate: "2025-08-10",
-    },
-  ];
+  const [kittyEmail, setKittyEmail] = useState("");
+  const [kitties, setKitties] = useState([]);
+  const [showModal, setShowModal] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const contributions = Array.from({ length: 10 }, (_, index) => ({
-    name: `Contributor ${index + 1}`,
-    email: `contributor${index + 1}@example.com`,
-    amount: `KES ${Math.floor(Math.random() * 10000) + 1000}`,
-    transactionRef: `TX${Math.floor(Math.random() * 100000)}`,
-  }));
+  useEffect(() => {
+    if (kittyEmail) {
+      fetchKitties();
+    }
+  }, [kittyEmail]);
+
+  const fetchKitties = async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const response = await axios.get(
+        `http://localhost:5000/getkitties/by-email?kittyEmail=${kittyEmail}`
+      );
+
+      setKitties(response.data);
+    } catch (error) {
+      console.error("Error fetching kitties:", error);
+      setError("No kitties found for this email.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (kittyEmail) {
+      setShowModal(false);
+    }
+  };
 
   return (
     <div className="container py-4">
+      {/* Modal for Email Input */}
+      <Modal show={showModal} backdrop="static" keyboard={false}>
+        <Modal.Header>
+          <Modal.Title>Enter Kitty Email</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group>
+              <Form.Label>Kitty Email Address</Form.Label>
+              <Form.Control
+                type="email"
+                value={kittyEmail}
+                onChange={(e) => setKittyEmail(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <div className="mt-3 d-flex justify-content-end">
+              <Button variant="primary" type="submit">
+                Fetch Kitties
+              </Button>
+            </div>
+          </Form>
+        </Modal.Body>
+      </Modal>
+
       <h2 className="text-center mb-4 text-primary fw-bold">My Kitties</h2>
 
-      {/* Kitty Cards */}
-      <div className="row g-3">
-        {kitties.map((kitty, index) => (
-          <div key={index} className="col-lg-3 col-md-6">
-            <div className="card shadow-lg border-0 rounded-3 text-center p-3">
-              <h5 className="fw-bold text-secondary">{kitty.name}</h5>
-              <p className="small text-muted">
-                Kitty Address: <br />
-                <strong>{kitty.address}</strong>
-              </p>
-              <p className="fw-bold text-success">
-                Amount Raised: {kitty.amountRaised}
-              </p>
-              <p className="text-danger">Maturity Date: {kitty.maturityDate}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* Display Error */}
+      {error && <p className="text-danger text-center">{error}</p>}
 
-      {/* Contributions Table */}
+      {/* Display Kitties */}
+      {loading ? (
+        <p className="text-center">Loading...</p>
+      ) : (
+        <div className="row g-3">
+          {kitties.map((kitty, index) => (
+            <div key={index} className="col-lg-3 col-md-6">
+              <div className="card shadow-lg border-0 rounded-3 text-center p-3">
+                <h5 className="fw-bold text-secondary">{kitty.kittyName}</h5>
+                <p className="small text-muted">
+                  Kitty Address: <br />
+                  <strong>{kitty.kittyAddress}</strong>
+                </p>
+                <p className="fw-bold text-success">
+                  Amount Raised: KES {kitty.kittyAmount}
+                </p>
+                <p className="text-secondary">Type: {kitty.kittyType}</p>
+                <p className="text-secondary">
+                  Beneficiaries: {kitty.beneficiaryNumber}
+                </p>
+                <p className="text-danger">
+                  Maturity Date: {new Date(kitty.maturityDate).toDateString()}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Contributions Table (Initially Empty) */}
       <div className="mt-4">
         <h4 className="text-primary">Contributions</h4>
         <div
           className="table-responsive"
-          style={{ maxHeight: "400px", overflowY: "auto", overflowX: "auto" }}
+          style={{ maxHeight: "400px", overflowY: "auto" }}
         >
           <table className="table table-hover table-bordered table-striped">
             <thead className="table-dark text-center">
@@ -76,22 +118,11 @@ const MyKitties = () => {
               </tr>
             </thead>
             <tbody>
-              {contributions.map((contribution, index) => (
-                <tr key={index} className="text-center">
-                  <td>{contribution.name}</td>
-                  <td>{contribution.email}</td>
-                  <td className="fw-bold text-success">
-                    {contribution.amount}
-                  </td>
-                  <td>{contribution.transactionRef}</td>
-                  <td>
-                    <button className="btn btn-success btn-sm me-2">
-                      Approve
-                    </button>
-                    <button className="btn btn-danger btn-sm">Revoke</button>
-                  </td>
-                </tr>
-              ))}
+              <tr>
+                <td colSpan="5" className="text-center text-muted">
+                  No contributions available.
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
